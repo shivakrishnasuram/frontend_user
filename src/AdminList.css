@@ -1,0 +1,204 @@
+/* AdminList.css */
+/* Main container */
+.admin-list-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Page title */
+.admin-list-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+}
+
+.admin-list-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #4776e6, #8e54e9);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+/* Grid layout for cards */
+.admin-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+/* Card styling */
+.admin-card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    height: 100%;
+}
+
+/* Card image container */
+.admin-card-image-container {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.admin-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.admin-card:hover .admin-card-image {
+    transform: scale(1.05);
+}
+
+/* Card content */
+.admin-card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.admin-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem;
+    color: #333;
+}
+
+.admin-phone {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #555;
+}
+
+/* View details button */
+.view-details {
+    margin-top: auto;
+    background: linear-gradient(to right, #4776e6, #8e54e9);
+    color: white;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.view-details:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+/* Error message styling */
+.error-container {
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.error-message {
+    font-size: 1.2rem;
+    color: #e74c3c;
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    display: inline-block;
+}
+
+/* Skeleton loading animation */
+@keyframes pulse {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton-text,
+.skeleton-image,
+.skeleton-card {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.skeleton-card {
+    height: 320px;
+}
+
+.skeleton-image {
+    height: 200px;
+    width: 100%;
+}
+
+.skeleton-title {
+    height: 28px;
+    margin-bottom: 12px;
+    width: 70%;
+}
+
+.skeleton-text {
+    height: 16px;
+    margin-bottom: 8px;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .admin-cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .admin-list-title {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .admin-list-title {
+        font-size: 1.75rem;
+    }
+
+    .admin-list-container {
+        padding: 1.5rem 0.75rem;
+    }
+}

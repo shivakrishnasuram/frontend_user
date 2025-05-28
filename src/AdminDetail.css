@@ -1,0 +1,182 @@
+/* AdminDetail.css */
+
+.admin-detail-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.back-button {
+    display: inline-block;
+    margin-bottom: 2rem;
+    padding: 8px 16px;
+    background-color: #f7f7f7;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #e0e0e0;
+}
+
+.admin-detail-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.admin-detail-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-detail-image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.admin-detail-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.admin-detail-title {
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.admin-detail-title h1 {
+    margin: 0;
+    color: #333;
+}
+
+.admin-detail-sport {
+    font-size: 1.1rem;
+    color: #6c757d;
+    margin-top: 0.5rem;
+}
+
+.admin-detail-content {
+    padding: 1.5rem;
+}
+
+.admin-detail-section {
+    margin-bottom: 2rem;
+}
+
+.admin-detail-section h2 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.detail-label {
+    font-weight: bold;
+    color: #555;
+}
+
+.certification-list {
+    margin: 0.5rem 0 0 1.5rem;
+    padding: 0;
+}
+
+.certification-list li {
+    margin-bottom: 0.25rem;
+}
+
+.admin-bio {
+    line-height: 1.6;
+    color: #555;
+}
+
+.admin-detail-error {
+    text-align: center;
+    padding: 3rem;
+}
+
+/* Skeleton Loading Styles */
+.admin-detail-skeleton {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.skeleton-header {
+    width: 100%;
+}
+
+.skeleton-image {
+    width: 100%;
+    height: 300px;
+}
+
+.skeleton-title {
+    height: 100px;
+    padding: 1.5rem;
+}
+
+.skeleton-info {
+    padding: 1.5rem;
+}
+
+.skeleton-line {
+    height: 20px;
+    margin-bottom: 1rem;
+    width: 80%;
+}
+
+.skeleton-paragraph {
+    height: 120px;
+    margin-top: 2rem;
+}
+
+.skeleton {
+    background: linear-gradient(to right, #f0f0f0 8%, #e0e0e0 18%, #f0f0f0 33%);
+    background-size: 800px 104px;
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 4px;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -468px 0;
+    }
+    100% {
+        background-position: 468px 0;
+    }
+}
+
+/* Responsive design */
+@media (min-width: 768px) {
+    .admin-detail-header {
+        flex-direction: row;
+    }
+    
+    .admin-detail-image-container {
+        width: 40%;
+        height: auto;
+    }
+    
+    .admin-detail-title {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-detail-container {
+        padding: 1rem;
+    }
+}

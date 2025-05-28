@@ -1,35 +1,54 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// App.jsx
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-function App() {
-  const [count, setCount] = useState(0)
+import Register from './Register';
+import LoginPage from './LoginPage';
+import Landingpage from './Landingpage';
+import AdminList from './COACHES.JSX';
+import AdminDetail from './AdminDetail';
+import Otp_regi from './Otp_regi';
+import PrimarySearchAppBar from './Navbar';
+
+const App = () => {
+  // Lifted state to hold whatever you want to show in the Navbar
+  const [userData, setUserData] = useState(null);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <Router>
+      {/* Always render Navbar and pass it the current userData */}
+      <PrimarySearchAppBar userData={userData} />
 
-export default App
+      <Routes>
+        <Route path="/" element={<Landingpage />} />
+
+        <Route
+          path="/register"
+          element={<Register />}
+        />
+
+        {/* Pass setUserData into LoginPage */}
+        <Route
+          path="/login"
+          element={<LoginPage setUserData={setUserData} />}
+        />
+
+        <Route
+          path="/coaches"
+          element={<AdminList />}
+        />
+        <Route
+          path="/coaches/:id"
+          element={<AdminDetail />}
+        />
+        <Route
+          path="/otp"
+          element={<Otp_regi />}
+        />
+        {/* You no longer need a “/navbar” route; Navbar is always visible */}
+      </Routes>
+    </Router>
+  );
+};
+
+export default App;
