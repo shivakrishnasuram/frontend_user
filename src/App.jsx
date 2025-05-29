@@ -8,16 +8,13 @@ import Landingpage from './Landingpage';
 import AdminList from './COACHES.JSX';
 import AdminDetail from './AdminDetail';
 import Otp_regi from './Otp_regi';
-import PrimarySearchAppBar from './Navbar';
 
 const App = () => {
   // Lifted state to hold whatever you want to show in the Navbar
-  const [userData, setUserData] = useState(null);
 
   return (
     <Router>
       {/* Always render Navbar and pass it the current userData */}
-      <PrimarySearchAppBar userData={userData} />
 
       <Routes>
         <Route path="/" element={<Landingpage />} />
@@ -30,7 +27,7 @@ const App = () => {
         {/* Pass setUserData into LoginPage */}
         <Route
           path="/login"
-          element={<LoginPage setUserData={setUserData} />}
+          element={<LoginPage />}
         />
 
         <Route
